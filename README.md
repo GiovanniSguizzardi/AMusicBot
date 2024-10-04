@@ -35,25 +35,6 @@
 - **FFmpeg** instalado e disponível no PATH
 - **Bibliotecas Python**: `discord.py`, `yt-dlp`, `asyncio`
 
-### Passo a Passo
-
-1. Clone o repositório:
-    ```bash
-    git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
-    ```
-
-2. Instale as dependências:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. Crie um bot no [Discord Developer Portal](https://discord.com/developers/applications) e adicione seu **Token** no arquivo `bot.py`.
-
-4. Execute o bot:
-    ```bash
-    python bot.py
-    ```
-
 ## 🛠️ Tecnologias Utilizadas
 
 - **Python 3.8+**
