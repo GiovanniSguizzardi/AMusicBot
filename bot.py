@@ -16,7 +16,7 @@ def get_prefix(bot, message):
     return prefixos.get(message.guild.id, '!')  # O prefixo padrão é '!'
 
 # Inicializar o bot com a função de obter prefixo dinamicamente
-bot = commands.Bot(command_prefix=get_prefix, intents=intents)
+bot = commands.Bot(command_prefix="!", intents=discord.Intents.default(), reconnect=True)
 
 # Variáveis globais
 song_queue = []  # Fila de músicas
