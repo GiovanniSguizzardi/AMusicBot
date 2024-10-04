@@ -1,0 +1,5 @@
+How to do BOT
+
+1- Digite CMD no explorador de arquivos
+2- Depois rode isso no CMD --> venv\Scripts\activate
+3- Depois rode isso no CMD --> python bot.py
