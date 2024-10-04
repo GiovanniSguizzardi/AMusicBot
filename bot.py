@@ -3,6 +3,8 @@ import discord
 from discord.ext import commands
 import yt_dlp as youtube_dl
 import asyncio
+from flask import Flask
+from threading import Thread
 
 # Intents necessários
 intents = discord.Intents.default()
@@ -216,5 +218,23 @@ async def comandos(ctx):
     embed.add_field(name=f"{prefix}prefixo [novo_prefixo]", value="Muda o prefixo dos comandos do bot.", inline=False)
     await ctx.send(embed=embed)
 
+# --- Servidor Flask para manter o bot ativo no Render ---
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "AMusicBOT está rodando!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+# --- Inicializar o Flask para manter o bot ativo ---
+keep_alive()
+
+# --- Inicializar o bot do Discord ---
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot.run(TOKEN)
